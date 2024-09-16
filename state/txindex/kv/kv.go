@@ -334,8 +334,7 @@ func lookForHash(conditions []query.Condition) (hash []byte, ok bool, err error)
 }
 
 func (*TxIndex) setTmpHashes(tmpHeights map[string][]byte, key, value []byte) {
-	eventSeq := extractEventSeqFromKey(key)
-	tmpHeights[string(value)+eventSeq] = value
+	tmpHeights[string(value)] = value
 }
 
 // match returns all matching txs by hash that meet a given condition and start
